@@ -18,7 +18,7 @@ The contact form posts to [Formspree](https://formspree.io) (free tier works).
 
 1. Create a form at formspree.io and copy its ID (it looks like `xyzabcd`).
 2. In `index.html`, replace `YOUR_FORM_ID` in
-   `action="https://formspree.io/f/YOUR_FORM_ID"` with your ID.
+   `action="https://formspree.io/f/xgakrbnz"` with your ID.
 3. Submissions arrive in your inbox. "I’m a" tells you whether it’s a shopper or a brand.
 
 Until this is done, the form shows a "not connected yet" message instead of sending.
@@ -39,11 +39,13 @@ Until this is done, the form shows a "not connected yet" message instead of send
 3. Click **Deploy**. Every push to `main` redeploys automatically.
 4. Add your domain under **Project → Settings → Domains**.
 
-## After you have a domain
+## Domain
 
-- Make the social image URL absolute in `index.html`
-  (`og:image` and `twitter:image`, e.g. `https://yourdomain.com/assets/brand/og-image.png`).
-- Optionally add a `sitemap.xml` and list it in `robots.txt`.
+The site is set up for **https://curagrocer.com**: canonical URL, social share
+image, structured data, `sitemap.xml` and `robots.txt` all point there.
+In Vercel, add `curagrocer.com` and `www.curagrocer.com` under **Settings → Domains**
+and follow the DNS records Vercel shows. Then submit `https://curagrocer.com/sitemap.xml`
+in Google Search Console.
 
 ## Updating content
 
