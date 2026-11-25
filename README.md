@@ -53,4 +53,4 @@ in Google Search Console.
 - Hours, address and opening date live in the Visit section of `index.html`
   and in the structured data block in the `<head>`.
 
-Photography and renderings are conceptual brand imagery; the footer note says so.
+Photography and renderings are conceptual brand imagery; replace them with real photos as they become available.
