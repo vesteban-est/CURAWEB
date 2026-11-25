@@ -1,0 +1,55 @@
+body{margin:0}
+a{color:#202820}a:hover{color:#000}
+html{scroll-behavior:smooth}[id]{scroll-margin-top:16px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@keyframes cRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes cSlide{from{opacity:0;transform:translate(-22px,22px)}to{opacity:1;transform:none}}
+@keyframes cPop{0%{opacity:0;transform:scale(.6) rotate(-30deg)}70%{opacity:1;transform:scale(1.06) rotate(-6deg)}100%{transform:scale(1) rotate(-10deg)}}
+@keyframes cSway{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(-2deg)}}
+@keyframes cTicker{to{transform:translateX(-50%)}}
+.c-rise{animation:cRise .9s cubic-bezier(.2,.7,.2,1) both}
+.c-slide{animation:cSlide 1s cubic-bezier(.2,.7,.2,1) both}
+.c-sticker{animation:cPop .7s cubic-bezier(.2,.7,.2,1) 1.1s both, cSway 6s ease-in-out 1.8s infinite}
+.c-ticker{display:flex;width:max-content;animation:cTicker 38s linear infinite}
+.c-frame .c-photo{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.c-frame img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.c-frame:hover .c-photo{transform:translate(-8px,-8px)}
+.c-frame:hover img{transform:scale(1.04)}
+.c-dot{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+a svg[viewBox="0 0 24 24"]{transition:transform .25s ease}
+a:hover svg[viewBox="0 0 24 24"]{transform:translateX(4px)}
+.c-card{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.c-wrap:hover,.c-wrap:focus-within{z-index:10}
+.c-wrap:hover .c-card,.c-wrap:focus-within .c-card{transform:translateY(-6px)}
+.c-wrap:hover .c-dot,.c-wrap:focus-within .c-dot{transform:scale(1.5)}
+.c-row:hover,.c-row:focus-within{z-index:10}
+.c-rowlink{transition:background-color .35s ease,color .35s ease}
+.c-row:hover .c-rowlink,.c-row:focus-within .c-rowlink{background:var(--flood);color:var(--ink)}
+.c-rowdot{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.c-row:hover .c-rowdot,.c-row:focus-within .c-rowdot{transform:scale(1.4)}
+.c-rowdesc{transition:opacity .3s ease}
+.c-pop{z-index:2;opacity:0;box-shadow:0 24px 48px rgba(32,40,32,.28);transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .25s ease}
+.c-pop-a{transform:translate(70px,-50%) rotate(8deg)}
+.c-pop-b{transform:translate(-70px,-50%) rotate(-8deg)}
+.c-row:hover .c-pop-a,.c-row:focus-within .c-pop-a{opacity:1;transform:translate(0,-50%) rotate(4deg)}
+.c-row:hover .c-pop-b,.c-row:focus-within .c-pop-b{opacity:1;transform:translate(0,-50%) rotate(-4deg)}
+@media (hover: hover) and (min-width: 900px){.c-row:hover .c-rowdesc{opacity:0}}
+.c-out{opacity:0;box-shadow:0 24px 48px rgba(32,40,32,.28);transition:transform .65s cubic-bezier(.2,.7,.2,1),opacity .25s ease}
+.c-wrap:hover .c-out-r,.c-wrap:focus-within .c-out-r{opacity:1;transform:translateX(calc(118% + 16px)) rotate(3deg)}
+.c-wrap:hover .c-out-l,.c-wrap:focus-within .c-out-l{opacity:1;transform:translateX(calc(-118% - 16px)) rotate(-3deg)}
+@media (hover: none), (max-width: 620px){
+.c-wrap{flex-direction:column}
+.c-wrap .c-out{position:relative !important;left:auto !important;top:auto !important;bottom:auto !important;width:100% !important;aspect-ratio:4 / 5;opacity:1;transform:none !important;box-shadow:none;border-radius:10px 10px 0 0 !important}
+.c-wrap .c-out + .c-card{border-radius:0 0 10px 10px !important;min-height:0 !important}
+.c-wrap:hover .c-card,.c-wrap:focus-within .c-card{transform:none}
+}
+@media (max-width: 620px){
+.nav-text{display:none}
+.c-cats{flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin-right:-20px;padding-right:20px;padding-bottom:8px}
+.c-cats .c-wrap{flex:0 0 82% !important;scroll-snap-align:start}
+.c-cats .c-card{min-height:240px !important}
+}
+@media (prefers-reduced-motion: reduce){.c-pop,.c-rowlink{transition:opacity .2s ease}.c-out{transition:opacity .2s ease}.c-rise,.c-slide,.c-sticker,.c-ticker{animation:none}.c-frame .c-photo,.c-frame img,.c-card,.c-dot{transition:none}}
+.skip-link{position:absolute;left:16px;top:-60px;z-index:100;background:#202820;color:#F6F0E7;padding:12px 18px;border-radius:999px;font-weight:600;text-decoration:none}
+.skip-link:focus{top:16px}
+:focus-visible{outline:3px solid #FF6535;outline-offset:3px}
